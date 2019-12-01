@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Posiadacze</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th>Owner</th>
+        <th>Link do zwierzątka</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="posiadacz : ${posiadacze}">
+        <td th:text="${posiadacz.nick}"> Posiadacz</td>
+        <td><a href="#" th:href="'/pets/pet/' + ${posiadacz.pet.id}">Zwierz</a></td>
+
+<!--        <td th:text="${posiadacz.pet.kind}"> Kind </td>-->
+<!--        <td th:text="${posiadacz.pet.name}">Imie zwierzaka</td>-->
+
+    </tr>
+    </tbody>
+</table>
+
+<p>dodaj nowego <a href="#" th:href="@{/owner/new-owner-form}">ownera</a></p>
+
+</body>
+</html>
