@@ -9,6 +9,11 @@
 <!--domyslnie zawsze jest method 'get' dlatego trzeba zmienic na 'post'-->
 <form action="/owner/save" method="post">
     Nick: <input type="text" name="nick">
+    <br>
+    Zwierz:
+    <select name="petId">
+        <option th:each="pet: ${pets}" th:value="${pet.id}" th:text="${pet.name}"></option>
+    </select>
     <br><br>
     <button type="submit">Zapisz</button>
 </form>

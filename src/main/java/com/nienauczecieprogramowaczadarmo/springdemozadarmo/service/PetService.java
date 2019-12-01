@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -25,6 +26,13 @@ public class PetService {
 
         Optional<Pet> result = petRepository.findById(id);
         logger.info("Pet from repo: [{}]", result);
+        return result;
+    }
+
+    public List<Pet> findAll(){
+        List<Pet> result = (List<Pet>) petRepository.findAll();
+        logger.info("pets from db: [{}]", result);
+
         return result;
     }
 }
