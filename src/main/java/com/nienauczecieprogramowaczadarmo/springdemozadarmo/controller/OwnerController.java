@@ -56,3 +56,4 @@ public class OwnerController {
 
 
 //model and view okresla
+//komentarz
